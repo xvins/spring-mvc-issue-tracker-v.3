@@ -14,6 +14,8 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -69,7 +71,7 @@
         </c:forEach>
 
         <h4>Add comment</h4>
-        <form:form commandName="comment" >
+        <form:form commandName="comment" class="commentForm">
                 <div class="control-group">
                     <label>Status:</label>
                     <div class="controls">
@@ -80,14 +82,12 @@
                     <label>Author:</label>
                     <div class="controls">
                         <form:input path="author" />
-                        <form:errors path="author"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label>Text:</label>
                     <div class="controls">
                         <form:input path="text" type="textarea" class="form-control" rows="3"/>
-                        <form:errors path="text"/>
                     </div>
                 </div>
 
@@ -97,6 +97,26 @@
                     </div>
                 </div>
             </form:form>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".commentForm").validate(
+                        {
+                            rules: {
+                                author: {
+                                    required : true,
+                                    minlength : 3
+                                }
+                            },
+                            highlight: function(element) {
+                                $(element).closest('.control-group').removeClass('has-success').addClass('has-error');
+                            },
+                            unhighlight: function(element) {
+                                $(element).closest('.control-group').removeClass('has-error').addClass('has-success');
+                            }
+                        }
+                );
+            })
+        </script>
     </div>
 </div>
 </body>

@@ -39,10 +39,7 @@ public class CommentController {
     }
 
     @RequestMapping(value="/comment{id}", method = RequestMethod.POST)
-    public String addComment(@Valid @ModelAttribute("comment") Comment comment, BindingResult result) {
-        if (result.hasErrors()) {
-            return "comment";
-        }
+    public String addComment(@ModelAttribute("comment") Comment comment, BindingResult result) {
         comment.setDate(new Date());
         commentRepository.save(comment);
         return "redirect:/comment{id}";

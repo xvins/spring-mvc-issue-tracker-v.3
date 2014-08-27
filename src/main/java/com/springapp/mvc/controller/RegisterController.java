@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.validation.Valid;
-
 @Controller
 @RequestMapping("/register")
 public class RegisterController {
@@ -29,10 +27,7 @@ public class RegisterController {
     }
 
     @RequestMapping(method= RequestMethod.POST)
-    public String doRegister(@Valid @ModelAttribute("user") User user, BindingResult result) {
-        if (result.hasErrors()) {
-            return "register";
-        }
+    public String doRegister(@ModelAttribute("user") User user, BindingResult result) {
         userService.save(user);
         return "redirect:/register?success=true";
     }

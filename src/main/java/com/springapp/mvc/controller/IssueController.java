@@ -38,10 +38,7 @@ public class IssueController {
     }
 
     @RequestMapping(value="/create", method= RequestMethod.POST)
-    public String createIssue(@Valid @ModelAttribute("issue") Issue issue, BindingResult result) {
-        if (result.hasErrors()) {
-            return "create";
-        }
+    public String createIssue(@ModelAttribute("issue") Issue issue, BindingResult result) {
         issue.setDate(new Date());
         issue.setStatus("Created");
         issueRepository.save(issue);

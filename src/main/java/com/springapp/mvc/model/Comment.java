@@ -5,8 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.Valid;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -16,12 +14,8 @@ public class Comment {
     @GeneratedValue
     private Long id;
 
-    @Valid
-    @Size(min=1, message = "Error")
     private String status;
-    @Size(min=3,message = "Name must be at least 3 characters!")
     private String author;
-    @Size(min=3,message = "Text must be at least 3 characters!")
     private String text;
     @DateTimeFormat(pattern="MM/d/yyyy hh:mm")
     private Date date;

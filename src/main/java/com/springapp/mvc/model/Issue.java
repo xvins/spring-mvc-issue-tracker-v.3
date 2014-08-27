@@ -4,7 +4,6 @@ package com.springapp.mvc.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -14,11 +13,8 @@ public class Issue {
     @GeneratedValue
     private Long id;
 
-    @Size(min=1, message = "Name must be at least 1 character")
     private String name;
-    @Size(min=1, message = "Author must be at least 1 character")
     private String author;
-    @Size(min=1, message = "Description must be at least 1 character")
     private String description;
 
     private String status;
