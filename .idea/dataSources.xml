@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4241408514">
+    <data-source source="LOCAL" name="defaultPersistenceUnit" uuid="84c9cb75-3a14-45f8-9b69-c605ed222c6c">
+      <driver-ref>hsqldb.remote</driver-ref>
+      <jdbc-driver>org.hsqldb.jdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:spring</jdbc-url>
+      <user-name>sa</user-name>
+      <libraries>
+        <library>
+          <url>file://C:\Users\Mike\.m2\repository\org\hsqldb\hsqldb\2.2.9\hsqldb-2.2.9.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+
