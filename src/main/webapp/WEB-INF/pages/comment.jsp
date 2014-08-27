@@ -97,34 +97,7 @@
                     </div>
                 </div>
             </form:form>
-
-
-        <%--<form:form action="register" method="post" commandName="commentForm">--%>
-            <%--<div>--%>
-                <%--<label>Status:</label>--%>
-                <%--<div>--%>
-                    <%--<form:select path="status" items="${statusList}" />--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-                <%--<label>Author:</label>--%>
-                <%--<div>--%>
-                    <%--<form:input path="author" />--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-                <%--<label>Text:</label>--%>
-                <%--<div>--%>
-                    <%--<form:textarea path="text" />--%>
-                <%--</div>--%>
-            <%--</div>--%>
-            <%--<div>--%>
-                <%--<div><input type="submit" value="Add comment"></div>--%>
-            <%--</div>--%>
-        <%--</form:form>--%>
-
     </div>
-
 </div>
 </body>
 </html>
