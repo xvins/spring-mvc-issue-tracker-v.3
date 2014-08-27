@@ -93,7 +93,7 @@
 
                 <div class="control-group">
                     <div class="controls">
-                        <input type="submit" value="Save" class="">
+                        <input type="submit" value="Save" class="" />
                     </div>
                 </div>
             </form:form>
